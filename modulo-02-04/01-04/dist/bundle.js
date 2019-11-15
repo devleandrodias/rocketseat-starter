@@ -1,4 +1,49 @@
+// OBJECT SHORT SINTAXE
+// const nome = "Leandro";
+// const idade = 18;
+// const usuario = {
+//   nome,
+//   idade,
+//   empresa: "SMARAPD"
+// };
+// console.log(usuario);
+// TEMPLATE LITERALS
+// const nome = "Leandro";
+// const idade = 18;
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
 // Operadores rest e spread
+// REST - Pegar o resto das propriedades
+// const usuario = {
+//   nome: "Leandro",
+//   idade: 18,
+//   empresa: "SMARAPD"
+// };
+// const { nome, ...resto } = usuario;
+// console.log(nome);
+// console.log(resto);
+// const array = [1, 2, 3, 4];
+// const [a, b, ...c] = array;
+// console.log(c);
+// function soma(...params) {
+//   return params.reduce((total, next) => total + next);
+// }
+// console.log(soma(1, 3453, 35145, 14513463, 4757568));
+// // SPREAD - Repassar/Propagar as propriedades de array
+// const array1 = [1, 2, 3];
+// const array2 = [4, 5, 6];
+// const arrayTotal = [...array1, ...array2];
+// console.log(arrayTotal);
+// const usuario1 = {
+//   nome: "Leandro",
+//   idade: 18,
+//   empresa: "Makoni"
+// };
+// const usuario2 = {
+//   ...usuario1,
+//   empresa: "SMARAPD"
+// };
+// console.log(usuario1);
+// console.log(usuario2);
 // -----------------------------------------------------------------------------------------------------------------------------
 // // Desestruturação
 // const usuario = {
