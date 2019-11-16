@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
+import Routes from './routes';
 
 import Header from './components/Header';
-import Main from './pages/main';
 
 import './styles.css';
 
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <Fragment>
       <Header />
-      <Main />
+      <Routes />
     </Fragment>
   );
 }
