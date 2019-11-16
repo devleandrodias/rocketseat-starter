@@ -1,11 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 require('./src/models/Product');
 
 const Product = mongoose.model('Product');
 // Iniciando a aplicação
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // Conectando o banco
 mongoose.connect('mongodb://localhost:27017/nodeapi', {
@@ -14,7 +17,8 @@ mongoose.connect('mongodb://localhost:27017/nodeapi', {
 });
 
 app.get('/products', async (req, res) => {
-  const products = await Product.find();
+  const { page = 1 } = req.query;
+  const products = await Product.paginate({}, { page, limit: 5 });
   return res.json(products);
 });
 
