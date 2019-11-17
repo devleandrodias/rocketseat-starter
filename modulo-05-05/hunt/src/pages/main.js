@@ -11,17 +11,16 @@ export default class Main extends Component {
     docs: [],
   };
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     this.loadProducts();
   }
 
   loadProducts = async () => {
-    const response = await fetch(
-      'https://rocketseat-node.herokuapp.com/api/products',
-    );
+    const response = await api.get('/products');
 
     const {docs} = response.data;
-    this.setState(docs);
+
+    this.setState({docs});
   };
 
   render() {
