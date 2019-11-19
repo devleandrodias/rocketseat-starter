@@ -28,8 +28,12 @@ export default class Main extends Component {
   renderItem = ({item}) => (
     <View style={styles.productContainer}>
       <Text style={styles.productTitle}>{item.title}</Text>
-      <Text styles={styles.productDescription}>{item.description}</Text>
-      <TouchableOpacity style={styles.productButton} onPress={() => {}}>
+      <Text style={styles.productDescription}>{item.description}</Text>
+      <TouchableOpacity
+        style={styles.productButton}
+        onPress={() => {
+          this.props.navigation.navigate('Product', {product: item});
+        }}>
         <Text style={styles.productButtonText}>Acessar</Text>
       </TouchableOpacity>
     </View>
@@ -86,7 +90,7 @@ const styles = StyleSheet.create({
   },
   productDescription: {
     fontSize: 16,
-    color: '#999',
+    color: '#998',
     marginTop: 5,
     lineHeight: 24,
   },
